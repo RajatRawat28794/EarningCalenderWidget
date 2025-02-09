@@ -1,42 +1,3 @@
-// import React from "react";
-// import Logo from "./Logo";
-
-// interface EarningsListProps {
-//   earnings: any[];
-//   logos: any[];
-// }
-
-// const EarningsList: React.FC<EarningsListProps> = ({ earnings, logos }) => {
-//   const getLogoData = (ticker: string) => logos.find((logo) => logo.search_key.toUpperCase() === ticker.toUpperCase())?.files?.mark_vector_light;
-
-//   return (
-//     <div className="grid grid-cols-5 gap-4">
-//       {["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"].map((day) => (
-//         <div key={day} className="p-3">
-//           <h2 className="text-xl font-bold text-center mb-2">{day}</h2>
-//           <div className="bg-white p-3 border border-black min-h-[500px] min-w-[290px]  w-[100%] overflow-y-scroll" style={{ height: '500px', overflowY: 'scroll', scrollbarWidth: 'none', msOverflowStyle: 'none' }} onMouseOver={(e) => e.currentTarget.style.overflowY = 'auto'} onMouseOut={(e) => e.currentTarget.style.overflowY = 'hidden'}>
-//             {earnings
-//               .filter((e) => new Date(e.updated * 1000).toLocaleString("en-IN", { weekday: "long" }) === day)
-//               .map((earning, idx) => (
-//                 <div key={idx} className="flex flex-col items-center">
-//                   <a href={`https://www.benzinga.com/quote/${earning.ticker}`} target="_blank" rel="noopener noreferrer" className="flex flex-col items-center">
-//                     <p className="text-xs text-gray-600">{earning.ticker}</p>
-//                     <Logo src={getLogoData(earning.ticker)} alt={earning.ticker} />
-//                   </a>
-//                 </div>
-//               ))}
-//           </div>
-//         </div>
-//       ))}
-//     </div>
-//   );
-// };
-
-// export default EarningsList;
-
-
-
-
 import React, { useMemo, memo } from "react";
 import Logo from "./Logo";
 
@@ -48,7 +9,6 @@ interface EarningsListProps {
 const EarningsList: React.FC<EarningsListProps> = ({ earnings, logos }) => {
   const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
 
-  // ✅ Efficiently group earnings by day (O(n) complexity)
   const earningsByDay = useMemo(() => {
     return earnings.reduce((acc, e) => {
       const day = new Date(e.updated * 1000).toLocaleString("en-IN", { weekday: "long" });
@@ -57,7 +17,6 @@ const EarningsList: React.FC<EarningsListProps> = ({ earnings, logos }) => {
     }, { Monday: [], Tuesday: [], Wednesday: [], Thursday: [], Friday: [] } as Record<string, any[]>);
   }, [earnings]);
 
-  // ✅ Convert logos array into a dictionary for O(1) lookups
   const logoMap = useMemo(() => {
     return logos.reduce((acc, logo) => {
       acc[logo.search_key.toUpperCase()] = logo.files?.mark_vector_light || "";
