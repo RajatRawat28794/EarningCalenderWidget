@@ -19,3 +19,21 @@ Final Output UI :
 ---------------
 ![image](https://github.com/user-attachments/assets/b6a270bd-8242-403b-a71e-ccc910680805)
 
+
+**Earning-Widget Implementation** 
+------------------------------------
+I have completed widget implementation with best approach - Web Component Approach with multiple benifits like:
+Encapsulation – Uses Shadow DOM to isolate styles and prevent conflicts.
+Reusability – Works in any framework (React, Angular, Vue, or plain HTML).
+Independence – Doesn't depend on the host app's React version or libraries.
+Performance – Loads only when needed, reducing unnecessary re-renders.
+Easy Integration – Just add <earnings-widget> to any page. No setup needed.
+Scalability – Independent updates without breaking the host app.
+SSR-Friendly – Can work with server-side rendering.
+Security – Runs in an isolated environment, reducing risks.
+Native Support – Works in modern browsers without extra dependencies.
+
+I have created one index.html file for testing the implemented widget inside a html file and here is the screenshot for your reference.
+![image](https://github.com/user-attachments/assets/3c47bf13-1c78-4094-9a42-9e323b1a7b28)
+
+
