@@ -1,3 +1,8 @@
+/**
+ * Logo Component
+ * 
+ * This component renders a company logo with a fallback mechanism.
+ **/
 import React from "react";
 
 interface LogoProps {

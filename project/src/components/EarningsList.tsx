@@ -1,3 +1,10 @@
+/**
+ * EarningsList Component
+ * 
+ * This component displays earnings data for different days of the week.
+ * It groups earnings by weekday and maps company logos to their tickers.
+ * 
+ **/
 import React, { useMemo, memo } from "react";
 import Logo from "./Logo";
 

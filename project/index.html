@@ -3,11 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Earnings Calendar</title>
-  <script type="module" src="/src/main.tsx"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <title>Test Earnings Widget</title>
+
+  <!-- Load React from CDN (Required for Web Component) -->
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+
+  <!-- Load Web Component -->
+  <script type="module" src="./dist/earnings-widget.es.js"></script>
 </head>
-<body class="bg-gray-100">
-  <div id="root"></div>
+<body>
+  <h1>Testing Earnings Widget</h1>
+  <earnings-widget></earnings-widget>
 </body>
 </html>

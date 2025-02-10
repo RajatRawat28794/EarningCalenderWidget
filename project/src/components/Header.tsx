@@ -1,3 +1,14 @@
+/**
+ * Header Component
+ * 
+ * This component displays the header section for the Earnings Calendar.
+ * It includes:
+ * - A title for the earnings display.
+ * - A dynamically calculated start date (Monday of the current week).
+ * - A loading indicator when data is being fetched.
+ * - An error message with a retry button if an error occurs.
+ **/
+
 import React, { useMemo } from "react";
 
 interface HeaderProps {

@@ -1,3 +1,8 @@
+/**
+ * useEarnings Custom Hook
+ * 
+ * This hook fetches earnings data and corresponding company logos, handling loading and error states.
+ **/
 import { useEffect, useState } from "react";
 import { fetchEarnings, fetchLogos } from "../api/api";
 
